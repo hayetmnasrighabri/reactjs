@@ -2,7 +2,7 @@
 function App() {
   return (
     <>
-    <Title color="green"/>
+    <Title color="green">Mon composants</Title>
     <input type="text"/> : 
       <p>React est une bibliothèque
        JavaScript pour le rendu des 
@@ -18,10 +18,10 @@ function App() {
   );
 }
 
-function Title({color}) {
+function Title({color, children}) {
   
   return(
-  <h2 style={{color:color}}>salut</h2>
+  <h2 style={{color:color}}>{children}</h2>
   ) 
 }
   
