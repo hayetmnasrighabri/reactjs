@@ -1,16 +1,21 @@
 const style={color: 'red', backgroundColor: 'blue'}
-
+const showtitle= false
 function App() {
-  const handleClick=(e)=>{
-        e.preventDefault()
-        e.stopPropagation()
-        alert("j'ai click sur le titre")
+  //const handleClick=(e)=>{
+    //    e.preventDefault()
+      //  e.stopPropagation()
+        //alert("j'ai click sur le titre")
       
-  }
+  
   return (
     <>
-    <h2 onClick={handleClick} id="title" className="title" style={style}>bonjour</h2>
-    <input type="text"/>
+   {
+    showtitle ?  
+    <h2 id="title" className="title" style={style}>bonjour</h2>
+    : <p>demo</p>
+    }
+    <input type="text"/> : 
+    
     <p>React est une bibliothèque
        JavaScript pour le rendu des 
        interfaces utilisateur (UI).
@@ -24,4 +29,4 @@ function App() {
     </>
   );
 }
-export default App
+export default App;
