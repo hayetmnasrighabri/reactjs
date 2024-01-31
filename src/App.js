@@ -1,22 +1,10 @@
-const style={color: 'red', backgroundColor: 'blue'}
-const showtitle= false
+
 function App() {
-  //const handleClick=(e)=>{
-    //    e.preventDefault()
-      //  e.stopPropagation()
-        //alert("j'ai click sur le titre")
-      
-  
   return (
     <>
-   {
-    showtitle ?  
-    <h2 id="title" className="title" style={style}>bonjour</h2>
-    : <p>demo</p>
-    }
+    <Title color="green"/>
     <input type="text"/> : 
-    
-    <p>React est une bibliothèque
+      <p>React est une bibliothèque
        JavaScript pour le rendu des 
        interfaces utilisateur (UI).
         L'interface utilisateur est construite à partir 
@@ -29,4 +17,12 @@ function App() {
     </>
   );
 }
+
+function Title({color}) {
+  
+  return(
+  <h2 style={{color:color}}>salut</h2>
+  ) 
+}
+  
 export default App;
