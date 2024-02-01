@@ -1,26 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [firstName, setFirstName]= useState()
-
-  const handleChange=(e)=>{
-     setFirstName(e.target.value)
-  }
-   const handleSubmit=(e)=>{
-    e.preventDefault()
-    console.log(new FormData(e.target))
-   }
-
-  
+  const[x, setX]=useState(0)
+  //const[y, setY]= useState(0)
+   
+  useEffect(()=>{
+     console.log("useeffect1")
+  })
   return(
-  
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="firstName"  onChange={handleChange} /> 
-      <button>envoyer</button>
-    </form>
-    
-  
+  <div>
+    <p>{x}</p>
+    <button onClick={()=>{setX(x+1)}}>count</button>
+  </div>
   )
 }
   
-export default App;
+export default App; 
