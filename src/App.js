@@ -6,7 +6,7 @@ function App() {
    
   useEffect(()=>{
      console.log("useeffect1")
-  })
+  },[])
   return(
   <div>
     <p>{x}</p>
