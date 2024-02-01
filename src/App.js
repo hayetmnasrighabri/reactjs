@@ -1,23 +1,26 @@
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [firstName, setFirstName]= useState()
+
+  const handleChange=(e)=>{
+     setFirstName(e.target.value)
+  }
+   const handleSubmit=(e)=>{
+    e.preventDefault()
+    console.log(new FormData(e.target))
+   }
+
+  
+  return(
+  
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="firstName"  onChange={handleChange} /> 
+      <button>envoyer</button>
+    </form>
     
-  const Increment = () => {
-      setCount (count + 1)
-        console.log(setCount)
-}
-const Decrement = ()=>{
- setCount(count-1)
-}
-  return (
-    <>
-    <p>compteur: {count}</p>
-   <button onClick={Increment}>increment</button>
-   <button onClick={Decrement}>decrement</button>
-   </>
+  
   )
 }
-
   
 export default App;
