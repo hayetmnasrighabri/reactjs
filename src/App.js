@@ -11,9 +11,11 @@ function App() {
     setCounttwo(counttwo+1)
   }
   const isEven =()=>{
-    let i = 0
-    while (i < 200000000000000) i++
-    return countone % 2===0 
+    let i = 0;
+    while (i < 2000000000000) i++;
+    return (
+      countone % 2===0
+      ) 
   }
   return(
   <div>
