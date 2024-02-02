@@ -1,16 +1,25 @@
 import { useEffect, useState } from "react";
 
 function App() {
-  const[x, setX]=useState(0)
-  //const[y, setY]= useState(0)
+  const [countone, setCountone]=useState(0)
+  const [counttwo, setCounttwo]=useState(0)
    
-  useEffect(()=>{
-     console.log("useeffect1")
-  },[])
+  const incrementcountone=()=>{
+    setCountone(countone+1)
+  }
+  const incrementcounttwo=()=>{
+    setCounttwo(counttwo+1)
+  }
+  const isEven =()=>{
+    let i = 0
+    while (i < 200000000000000) i++
+    return countone % 2===0 
+  }
   return(
   <div>
-    <p>{x}</p>
-    <button onClick={()=>{setX(x+1)}}>count</button>
+     <button onClick={incrementcountone}>countone-{countone}</button>
+     <p>{isEven() ? "Even" : "odd"}</p>
+    <button onClick={incrementcounttwo}>counttwo-{counttwo}</button>
   </div>
   )
 }
