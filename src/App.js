@@ -1,29 +1,25 @@
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
+import {sculptureList} from "./data"
 
-function App() {
-  const [countone, setCountone]=useState(0)
-  const [counttwo, setCounttwo]=useState(0)
-   
-  const incrementcountone=()=>{
-    setCountone(countone+1)
+export default function Gallery() {
+  const [index, setIndex]= useState(0)
+
+  const handleClick =()=> {
+    setIndex(index+1)
   }
-  const incrementcounttwo=()=>{
-    setCounttwo(counttwo+1)
-  }
-  const isEven = useMemo(()=>{
-    let i = 0
-    while (i < 200000000) i++
-    return (
-      countone % 2===0
-      ) 
-  },[countone])
-  return(
-  <div>
-     <button onClick={incrementcountone}>countone-{countone}</button>
-     <p>{isEven ? "Even" : "odd"}</p>
-    <button onClick={incrementcounttwo}>counttwo-{counttwo}</button>
-  </div>
+     let sculpture = sculptureList[index]
+  return (
+    <div>
+     <button onClick={handleClick}>Next</button>
+      <h1>{sculpture.name}
+       by {sculpture.artist}
+       </h1>
+      <h2>{index+1} of {sculptureList.length}</h2>
+      <img 
+      src={sculpture.url}
+      alt={sculpture.alt}
+      />
+      <p>{sculpture. description}</p>
+     </div>
   )
 }
-  
-export default App; 
