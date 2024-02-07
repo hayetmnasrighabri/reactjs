@@ -4,6 +4,7 @@ export default function Form(){
   const [firstname, setFirstname]=useState('')
   const[lastname, setLastname]=useState('')
   //const [fullname, setFullname]=useState('')
+  const fullname=firstname+''+lastname
   const handleFirstnameChange=(e)=>{
     setFirstname(e.target.value)
     //setFullname(e.target.value+ '' +lastname)
@@ -15,7 +16,7 @@ export default function Form(){
   return(
    <>
    <h1>Let’s check you in</h1>
-   <label>firstname:
+   <label>firstname:{''}
     <input
       value={firstname}
       onChange={handleFirstnameChange}
@@ -24,13 +25,13 @@ export default function Form(){
     <br/>
     <br/>
     <br/>
-<label>lastname:
+<label>lastname:{''}
   <input
     value={lastname}
     onChange={handleLatsnameChange}
   ></input>
 </label>
-<p>Your ticket will be issued to:</p>
+<p>Your ticket will be issued to:{fullname}</p>
    </>
   )
 }
